@@ -1,24 +1,28 @@
 import "server-only";
 import { connection } from "next/server";
 import type { Portfolio, ProjectDetail } from "./types";
-
-export class BackendUnavailableError extends Error {}
+import snapshot from "@/data/portfolio.json";
 
 /**
- * Base URL of the Spring Boot API (without the trailing /api), read at request time on the server only,
- * so it never ships to the browser. Docker Compose sets http://backend:8080; on Vercel set BACKEND_URL
- * to the public URL of the hosted backend. The localhost default applies only to `next dev`.
+ * Portfolio content comes from one of two sources:
+ *
+ * 1. The Spring Boot API, when BACKEND_URL is set (Docker Compose sets http://backend:8080; on Vercel set it
+ *    to the public URL of the hosted API, without the trailing /api). Read server-side only, never shipped
+ *    to the browser. If the API is unreachable, the bundled snapshot is served instead.
+ * 2. The bundled snapshot in src/data/portfolio.json, when BACKEND_URL is not set. The site is then fully
+ *    static and needs no backend. Regenerate the snapshot from the API after changing the seed data
+ *    (see README, "Static content snapshot").
  */
-export function backendUrl(): string {
+const staticData = snapshot as unknown as { portfolio: Portfolio; projects: Record<string, ProjectDetail> };
+
+export function backendUrl(): string | null {
   const url = process.env.BACKEND_URL?.trim();
-  if (url) return url.replace(/\/$/, "");
-  if (process.env.NODE_ENV === "development") return "http://localhost:8080";
-  throw new BackendUnavailableError("BACKEND_URL is not configured");
+  return url ? url.replace(/\/$/, "") : null;
 }
 
-async function getJson<T>(path: string): Promise<T | null> {
-  await connection(); // content and BACKEND_URL are read per request, never baked in at build time
-  const base = backendUrl();
+class BackendUnavailableError extends Error {}
+
+async function getJson<T>(base: string, path: string): Promise<T | null> {
   let res: Response;
   try {
     res = await fetch(`${base}${path}`, { headers: { Accept: "application/json" } });
@@ -30,12 +34,41 @@ async function getJson<T>(path: string): Promise<T | null> {
   return (await res.json()) as T;
 }
 
-export async function getPortfolio(): Promise<Portfolio> {
-  const data = await getJson<Portfolio>("/api/portfolio");
-  if (!data) throw new BackendUnavailableError("Portfolio not found");
-  return data;
+/** Fetches from the API when configured, falling back to the bundled snapshot if it is unavailable. */
+async function fromApiOr<T>(path: string, fallback: () => T): Promise<T> {
+  const base = backendUrl();
+  if (!base) return fallback();
+  await connection(); // live content is read per request, never baked in at build time
+  try {
+    const data = await getJson<T>(base, path);
+    return data ?? fallback();
+  } catch (err) {
+    if (!(err instanceof BackendUnavailableError)) throw err;
+    console.warn(`[abhijayflix] ${err.message}; serving bundled content`);
+    return fallback();
+  }
 }
 
-export function getProject(slug: string): Promise<ProjectDetail | null> {
-  return getJson<ProjectDetail>(`/api/projects/${encodeURIComponent(slug)}`);
+export function getPortfolio(): Promise<Portfolio> {
+  return fromApiOr("/api/portfolio", () => staticData.portfolio);
+}
+
+export async function getProject(slug: string): Promise<ProjectDetail | null> {
+  const fallback = () => staticData.projects[slug] ?? null;
+  const base = backendUrl();
+  if (!base) return fallback();
+  await connection();
+  try {
+    // A 404 from the live API is authoritative: the project does not exist.
+    return await getJson<ProjectDetail>(base, `/api/projects/${encodeURIComponent(slug)}`);
+  } catch (err) {
+    if (!(err instanceof BackendUnavailableError)) throw err;
+    console.warn(`[abhijayflix] ${err.message}; serving bundled content`);
+    return fallback();
+  }
+}
+
+/** Slugs available without a backend, used to prerender project pages. */
+export function staticProjectSlugs(): string[] {
+  return Object.keys(staticData.projects);
 }

@@ -1,10 +1,9 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
-import { BackendUnavailableError, getPortfolio, getProject } from "@/lib/api";
+import { getPortfolio, getProject, staticProjectSlugs } from "@/lib/api";
 import { Navbar } from "@/components/ui/Navbar";
 import { Footer } from "@/components/ui/Footer";
-import { BackendOffline } from "@/components/ui/BackendOffline";
 import { DetailSkeleton } from "@/components/ui/Skeletons";
 import { BrandMark, PosterArt } from "@/components/ui/Poster";
 import { PendingLink } from "@/components/ui/PendingLink";
@@ -13,6 +12,10 @@ import { ArrowLeft, ExternalIcon, GithubIcon } from "@/components/ui/Icons";
 import { SectionBlock } from "@/components/project/SectionBlock";
 import { MetricsBoard } from "@/components/project/MetricsBoard";
 import { ProjectPoster } from "@/components/home/ProjectCard";
+
+export function generateStaticParams() {
+  return staticProjectSlugs().map((slug) => ({ slug }));
+}
 
 export default function ProjectPage({ params }: PageProps<"/projects/[slug]">) {
   return (
@@ -25,13 +28,7 @@ export default function ProjectPage({ params }: PageProps<"/projects/[slug]">) {
 async function ProjectDetail({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
 
-  let project, portfolio;
-  try {
-    [project, portfolio] = await Promise.all([getProject(slug), getPortfolio()]);
-  } catch (err) {
-    if (err instanceof BackendUnavailableError) return <BackendOffline detail={err.message} />;
-    throw err;
-  }
+  const [project, portfolio] = await Promise.all([getProject(slug), getPortfolio()]);
   if (!project) notFound();
 
   const { profile } = portfolio;

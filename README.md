@@ -10,8 +10,11 @@ A Netflix-inspired developer portfolio for **Abhijay Krishnan**.
 | Runtime  | Docker + Docker Compose |
 
 All content (profile, projects, internships, skills, education, certifications) lives in MySQL,
-seeded by `backend/src/main/resources/db/migration/V2__seed_portfolio.sql`, and is served through REST.
-The frontend contains no portfolio content of its own.
+seeded by the Flyway migrations in `backend/src/main/resources/db/migration/`, and is served through REST.
+
+The frontend also bundles a **static snapshot** of that content (`frontend/src/data/portfolio.json`), so it
+works on its own: with no `BACKEND_URL` it serves the snapshot, and if the API is unreachable it falls back
+to it. The contact form then opens the visitor's email app (`mailto:`) instead of posting to the API.
 
 ```
 browser ──► Next.js (3000) ──► Spring Boot API (8080) ──► MySQL (3306)
@@ -89,8 +92,11 @@ frontend reaches them through one **server-only** env var (never sent to the bro
 | Framework Preset | Next.js |
 | `BACKEND_URL` | Public base URL of the API, **without** `/api`, e.g. `https://api.example.com` |
 
+`BACKEND_URL` is optional. Without it the site runs entirely from the static snapshot. Vercel reads it at
+build time, so redeploy after changing it.
+
 On the backend, set `CORS_ALLOWED_ORIGINS` to the Vercel domain (only needed for direct browser calls;
-the site itself calls the API server-side). Without `BACKEND_URL` every page shows the "trouble playing" screen.
+the site itself calls the API server-side).
 
 Project slugs: `payment-aiops-platform`, `quickparcel`, `fake-review-detection`, `currency-authentication`.
 
@@ -104,3 +110,12 @@ The seed data follows the supplied content exactly:
 - No proficiency percentages, no invented dates, links or results.
 
 To change any text, edit the seed migration before the first deploy, or add a new `V3__...sql` migration afterwards.
+
+## Static content snapshot
+
+After changing content in the database (a new migration, or the admin API), refresh the bundled copy
+from a running API and commit it:
+
+```bash
+cd frontend && npm run snapshot      # reads http://localhost:8080, or BACKEND_URL if set
+```

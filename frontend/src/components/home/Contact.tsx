@@ -5,7 +5,17 @@ import type { Profile } from "@/lib/types";
 import { PendingLink } from "@/components/ui/PendingLink";
 import { CheckIcon, FileIcon, GithubIcon, LinkedinIcon, MailIcon, PhoneIcon } from "@/components/ui/Icons";
 
-type Status = { state: "idle" | "sending" | "sent" } | { state: "error"; message: string };
+type Status =
+  | { state: "idle" | "sending" | "sent" }
+  | { state: "emailed"; href: string }
+  | { state: "error"; message: string };
+
+/** Builds a pre-filled email to the site owner from the form fields. */
+function mailtoFor(to: string, data: Record<string, FormDataEntryValue>) {
+  const subject = `Portfolio enquiry from ${data.name}`;
+  const body = `${data.message}\n\n${data.name}\n${data.email}`;
+  return `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
 
 const linkClass =
   "flex items-center gap-3 rounded-md bg-white/5 px-4 py-3 text-sm ring-1 ring-white/10 transition hover:bg-white/10";
@@ -18,12 +28,26 @@ export function Contact({ profile }: { profile: Profile }) {
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form));
     setStatus({ state: "sending" });
+
+    const emailInstead = () => {
+      if (!profile.email) return false;
+      const href = mailtoFor(profile.email, data);
+      window.location.href = href;
+      setStatus({ state: "emailed", href });
+      return true;
+    };
+
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
-      });
+      }).catch(() => null);
+      // No backend configured or reachable: hand the message to the visitor's email app.
+      if (!res || res.status === 503) {
+        if (emailInstead()) return;
+        throw new Error("Messaging is unavailable right now. Please try again later.");
+      }
       if (!res.ok) {
         const body = await res.json().catch(() => null);
         const fields = body?.errors ? Object.keys(body.errors).join(", ") : null;
@@ -49,7 +73,7 @@ export function Contact({ profile }: { profile: Profile }) {
               Ready to <span className="text-flix-red">collaborate?</span>
             </h2>
             <p className="mt-3 max-w-md text-neutral-300">
-              Internships, full-time roles, or a project idea: send a message and it lands straight in the backend.
+              Internships, full-time roles, or a project idea: send a message and I&apos;ll get back to you.
             </p>
             <div className="mt-6 grid gap-2 sm:grid-cols-2">
               <PendingLink href={profile.email ? `mailto:${profile.email}` : null} className={linkClass} icon={<MailIcon />}>
@@ -70,7 +94,22 @@ export function Contact({ profile }: { profile: Profile }) {
             </div>
           </div>
 
-          {status.state === "sent" ? (
+          {status.state === "emailed" ? (
+            <div className="grid place-items-center rounded-md bg-white/5 p-8 text-center" role="status">
+              <div>
+                <span className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-white text-black"><MailIcon width={28} height={28} /></span>
+                <p className="mt-4 text-xl font-semibold">Opening your email app</p>
+                <p className="mt-1 text-sm text-flix-muted">
+                  Your message is ready to send. If nothing opened,{" "}
+                  <a href={status.href} className="underline underline-offset-4">click here</a> or email{" "}
+                  <a href={`mailto:${profile.email}`} className="underline underline-offset-4">{profile.email}</a>.
+                </p>
+                <button type="button" onClick={() => setStatus({ state: "idle" })} className="mt-5 text-sm underline underline-offset-4">
+                  Back to the form
+                </button>
+              </div>
+            </div>
+          ) : status.state === "sent" ? (
             <div className="grid place-items-center rounded-md bg-white/5 p-8 text-center" role="status">
               <div>
                 <span className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-[#46d369] text-black"><CheckIcon width={28} height={28} /></span>

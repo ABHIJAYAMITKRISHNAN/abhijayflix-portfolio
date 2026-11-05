@@ -1,0 +1,780 @@
+{
+  "portfolio": {
+    "profile": {
+      "fullName": "Abhijay Krishnan",
+      "brandName": "ABHIJAYFLIX",
+      "title": "Software Engineer | Java Backend Developer | DevOps Enthusiast | AI/ML Developer",
+      "introduction": [
+        "I am a Computer Engineering student passionate about building scalable backend applications, distributed systems, cloud infrastructure, and AI-powered solutions.",
+        "My technical interests include Java, Spring Boot, Microservices, Python, Machine Learning, NLP, Docker, Kubernetes, and AWS.",
+        "I enjoy solving real-world engineering problems by developing applications that combine backend technologies, cloud infrastructure, and intelligent systems."
+      ],
+      "aboutTitle": "The Story Behind the Developer",
+      "aboutText": [
+        "I'm Abhijay Krishnan, a Computer Engineering student at NMIMS, Mumbai, passionate about building scalable software applications and intelligent systems.",
+        "My development journey includes building distributed payment processing systems, logistics platforms, NLP-based machine learning applications, and AI-powered tools.",
+        "I enjoy working across backend development, cloud infrastructure, DevOps, and artificial intelligence.",
+        "I am particularly interested in Java backend engineering, Spring Boot, microservices, distributed systems, and cloud technologies.",
+        "My goal is to become a strong software engineer capable of designing, developing, deploying, and maintaining scalable real-world applications."
+      ],
+      "email": "abhijay.k2004@gmail.com",
+      "phone": "+91 8779479851",
+      "linkedinUrl": "https://www.linkedin.com/in/abhijay-krishnan-06baa4367/",
+      "githubUrl": "https://github.com/ABHIJAYAMITKRISHNAN",
+      "resumeUrl": null,
+      "imageUrl": null
+    },
+    "projects": [
+      {
+        "slug": "payment-aiops-platform",
+        "title": "Distributed Payment Processing & AI-Powered Self-Healing Platform",
+        "shortTitle": "Payment & AIOps Platform",
+        "year": 2026,
+        "categories": [
+          "Distributed Systems",
+          "Backend Engineering",
+          "Artificial Intelligence",
+          "AIOps"
+        ],
+        "techStack": [
+          "Java 17",
+          "Spring Boot",
+          "Python",
+          "PostgreSQL",
+          "REST APIs",
+          "JWT",
+          "Docker",
+          "Kubernetes",
+          "Prometheus",
+          "LangGraph",
+          "ChromaDB",
+          "Ollama",
+          "Isolation Forest"
+        ],
+        "tagline": "Four Spring Boot microservices move the money. A 13-stage multi-agent AIOps pipeline watches them, finds root causes and recommends recovery for a human to approve.",
+        "posterVariant": "network",
+        "accentColor": "#E50914",
+        "position": 1
+      },
+      {
+        "slug": "quickparcel",
+        "title": "QuickParcel – Parcel Delivery Management Platform",
+        "shortTitle": "QuickParcel",
+        "year": 2025,
+        "categories": [
+          "Full Stack Development",
+          "Logistics",
+          "Cloud Computing",
+          "DevOps"
+        ],
+        "techStack": [
+          "Java",
+          "Spring Boot",
+          "React.js",
+          "Firebase Authentication",
+          "Firestore",
+          "Leaflet",
+          "OSRM",
+          "MySQL",
+          "Docker",
+          "AWS EC2"
+        ],
+        "tagline": "A logistics platform connecting customers with vehicle providers: distance-based pricing, real routes on interactive maps, and synchronized dashboards.",
+        "posterVariant": "map",
+        "accentColor": "#F5A524",
+        "position": 2
+      },
+      {
+        "slug": "fake-review-detection",
+        "title": "Fake Review Detection System",
+        "shortTitle": "Fake Review Detection",
+        "year": null,
+        "categories": [
+          "Natural Language Processing",
+          "Machine Learning",
+          "Deep Learning",
+          "Artificial Intelligence"
+        ],
+        "techStack": [
+          "Python",
+          "NLTK",
+          "TextBlob",
+          "Scikit-learn",
+          "TensorFlow",
+          "Keras",
+          "BiLSTM",
+          "Longformer",
+          "Hugging Face Transformers",
+          "TF-IDF",
+          "Pandas",
+          "NumPy",
+          "Matplotlib",
+          "Seaborn",
+          "MLflow",
+          "Streamlit",
+          "Docker",
+          "Joblib"
+        ],
+        "tagline": "Human or machine? An NLP system that separates genuine human-written reviews from AI-generated ones using classical ML, a BiLSTM and an ensemble.",
+        "posterVariant": "text",
+        "accentColor": "#8B5CF6",
+        "position": 3
+      },
+      {
+        "slug": "currency-authentication",
+        "title": "Currency Authentication System",
+        "shortTitle": "Currency Authentication",
+        "year": 2025,
+        "categories": [
+          "Machine Learning",
+          "Image Processing",
+          "Computer Vision"
+        ],
+        "techStack": [
+          "Python",
+          "Image Processing",
+          "Random Forest",
+          "Support Vector Machine",
+          "Gradient Boosting",
+          "Tkinter"
+        ],
+        "tagline": "A machine learning counterfeit detector that analyses currency note images and classifies them through a real-time verification GUI.",
+        "posterVariant": "currency",
+        "accentColor": "#10B981",
+        "position": 4
+      }
+    ],
+    "experiences": [
+      {
+        "slug": "orivon-technologies",
+        "company": "Orivon Technologies",
+        "role": "Software Engineering Intern",
+        "duration": "2 Months",
+        "summary": "Developed Java and Spring Boot REST APIs for a cloud-based document management platform.",
+        "techStack": [
+          "Java",
+          "Spring Boot",
+          "Spring Data JPA",
+          "Hibernate",
+          "MySQL",
+          "Docker",
+          "AWS EC2",
+          "AWS S3",
+          "AWS CloudWatch",
+          "Postman"
+        ],
+        "responsibilities": [
+          "Developed REST APIs using Java and Spring Boot",
+          "Worked with Spring Data JPA and Hibernate",
+          "Used MySQL for database operations",
+          "Deployed containerised services on AWS EC2 using Docker",
+          "Integrated Amazon S3 for cloud storage",
+          "Used AWS CloudWatch for monitoring",
+          "Tested APIs using Postman",
+          "Used AI-assisted development tools with structured prompting to accelerate coding and debugging",
+          "Verified generated code within an Agile/Scrum workflow"
+        ],
+        "highlights": []
+      },
+      {
+        "slug": "mindstix-foundation",
+        "company": "Mindstix Foundation",
+        "role": "AI / Software Development Intern",
+        "duration": "1 Month",
+        "summary": "Worked on developing two AI-powered chatbot applications.",
+        "techStack": [
+          "Python",
+          "AI Chatbots",
+          "Prompt Engineering",
+          "Structured Interaction Techniques"
+        ],
+        "responsibilities": [
+          "Built two AI-powered chatbot applications using Python",
+          "Used prompt engineering and structured interaction techniques",
+          "Evaluated AI responses for correctness, relevance, and usability",
+          "Iteratively refined prompts based on model limitations and mentor feedback"
+        ],
+        "highlights": [
+          "Interview Conductor Bot",
+          "Doubt Resolution Bot"
+        ]
+      }
+    ],
+    "skills": [
+      {
+        "slug": "languages",
+        "name": "Programming Languages",
+        "skills": [
+          "Java",
+          "Python",
+          "C++"
+        ]
+      },
+      {
+        "slug": "backend",
+        "name": "Backend Development",
+        "skills": [
+          "Spring Boot",
+          "Spring MVC",
+          "Spring Data JPA",
+          "Hibernate",
+          "REST APIs",
+          "Maven"
+        ]
+      },
+      {
+        "slug": "databases",
+        "name": "Databases",
+        "skills": [
+          "MySQL",
+          "Firebase"
+        ]
+      },
+      {
+        "slug": "frontend",
+        "name": "Frontend Development",
+        "skills": [
+          "React.js",
+          "Next.js",
+          "HTML",
+          "CSS",
+          "JavaScript"
+        ]
+      },
+      {
+        "slug": "devops-cloud",
+        "name": "DevOps & Cloud",
+        "skills": [
+          "Git",
+          "GitHub",
+          "Postman",
+          "Docker",
+          "Kubernetes",
+          "CI/CD",
+          "AWS EC2",
+          "AWS S3",
+          "AWS CloudWatch"
+        ]
+      },
+      {
+        "slug": "ai-ml",
+        "name": "AI & Machine Learning",
+        "skills": [
+          "NLP",
+          "TensorFlow",
+          "Keras",
+          "Scikit-learn",
+          "LangGraph",
+          "ChromaDB",
+          "Ollama",
+          "Machine Learning",
+          "Deep Learning"
+        ]
+      },
+      {
+        "slug": "core-cs",
+        "name": "Core Computer Science",
+        "skills": [
+          "Data Structures and Algorithms",
+          "Object-Oriented Programming",
+          "Database Management Systems",
+          "Operating Systems",
+          "Computer Networks"
+        ]
+      }
+    ],
+    "education": [
+      {
+        "degree": "Bachelor of Technology",
+        "branch": "Computer Engineering",
+        "institution": "MPSTME, SVKM’s NMIMS, Mumbai",
+        "expectedGraduation": "2027"
+      }
+    ],
+    "certifications": [
+      {
+        "title": "Coding Shuttle – Spring Boot 0 to 100 Cohort 4.0 (AI + DevOps)",
+        "kind": "PROGRAM"
+      },
+      {
+        "title": "Sigma 5.0 – DSA & Full Stack Development",
+        "kind": "PROGRAM"
+      },
+      {
+        "title": "Internship Completion Certificate – Mindstix Foundation",
+        "kind": "CERTIFICATE"
+      },
+      {
+        "title": "Smart India Hackathon 2024–25",
+        "kind": "HACKATHON"
+      },
+      {
+        "title": "Cyber Cypher MPSTME Hackathon",
+        "kind": "HACKATHON"
+      }
+    ]
+  },
+  "projects": {
+    "payment-aiops-platform": {
+      "slug": "payment-aiops-platform",
+      "title": "Distributed Payment Processing & AI-Powered Self-Healing Platform",
+      "shortTitle": "Payment & AIOps Platform",
+      "year": 2026,
+      "categories": [
+        "Distributed Systems",
+        "Backend Engineering",
+        "Artificial Intelligence",
+        "AIOps"
+      ],
+      "techStack": [
+        "Java 17",
+        "Spring Boot",
+        "Python",
+        "PostgreSQL",
+        "REST APIs",
+        "JWT",
+        "Docker",
+        "Kubernetes",
+        "Prometheus",
+        "LangGraph",
+        "ChromaDB",
+        "Ollama",
+        "Isolation Forest"
+      ],
+      "tagline": "Four Spring Boot microservices move the money. A 13-stage multi-agent AIOps pipeline watches them, finds root causes and recommends recovery for a human to approve.",
+      "summary": "A distributed payment processing platform built with Java 17, Spring Boot, PostgreSQL and four REST microservices, containerised with Docker, deployed on Kubernetes and monitored with Prometheus, paired with an AI-powered incident response pipeline built in Python and LangGraph.",
+      "notes": "Not fully autonomous: every recovery action recommended by the AIOps pipeline requires human approval before it is executed.",
+      "posterVariant": "network",
+      "accentColor": "#E50914",
+      "githubUrl": null,
+      "demoUrl": null,
+      "position": 1,
+      "sections": [
+        {
+          "heading": "The Platform",
+          "kind": "TEXT",
+          "body": "Developed a distributed payment processing platform using Java 17, Spring Boot, PostgreSQL and four REST microservices. The system uses JWT-based authentication and PostgreSQL for persistent data storage. The microservices are containerised using Docker and deployed on Kubernetes, with Prometheus monitoring.",
+          "items": []
+        },
+        {
+          "heading": "The Microservices",
+          "kind": "LIST",
+          "body": null,
+          "items": [
+            "Authentication Service",
+            "Payment Service",
+            "Ledger Service",
+            "Notification Service"
+          ]
+        },
+        {
+          "heading": "Payment Flow",
+          "kind": "FLOW",
+          "body": null,
+          "items": [
+            "Client",
+            "Authentication Service",
+            "Payment Service",
+            "Ledger Service",
+            "Notification Service"
+          ]
+        },
+        {
+          "heading": "The AIOps Layer",
+          "kind": "TEXT",
+          "body": "Built a 13-stage multi-agent incident response pipeline using Python and LangGraph. The pipeline analyses incidents, retrieves historical context, identifies potential root causes and recommends recovery actions. Human approval is required before any recovery action is executed.",
+          "items": []
+        },
+        {
+          "heading": "AIOps Building Blocks",
+          "kind": "LIST",
+          "body": null,
+          "items": [
+            "Isolation Forest for anomaly detection",
+            "ChromaDB for historical incident retrieval",
+            "Ollama for local LLM inference",
+            "LangGraph for multi-stage agent orchestration"
+          ]
+        },
+        {
+          "heading": "AIOps Flow",
+          "kind": "FLOW",
+          "body": null,
+          "items": [
+            "Telemetry",
+            "Anomaly Detection",
+            "Historical Context Retrieval",
+            "Root Cause Analysis",
+            "Recovery Recommendation",
+            "Human Approval",
+            "Kubernetes Recovery"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "label": "Macro F1 score",
+          "value": "1.00",
+          "note": "Across 48 evaluation incidents"
+        },
+        {
+          "label": "Cross-service faults identified: multi-agent pipeline",
+          "value": "4 / 4",
+          "note": null
+        },
+        {
+          "label": "Cross-service faults identified: single-agent baseline",
+          "value": "0 / 4",
+          "note": null
+        }
+      ]
+    },
+    "quickparcel": {
+      "slug": "quickparcel",
+      "title": "QuickParcel – Parcel Delivery Management Platform",
+      "shortTitle": "QuickParcel",
+      "year": 2025,
+      "categories": [
+        "Full Stack Development",
+        "Logistics",
+        "Cloud Computing",
+        "DevOps"
+      ],
+      "techStack": [
+        "Java",
+        "Spring Boot",
+        "React.js",
+        "Firebase Authentication",
+        "Firestore",
+        "Leaflet",
+        "OSRM",
+        "MySQL",
+        "Docker",
+        "AWS EC2"
+      ],
+      "tagline": "A logistics platform connecting customers with vehicle providers: distance-based pricing, real routes on interactive maps, and synchronized dashboards.",
+      "summary": "A parcel delivery and logistics platform that connects customers with vehicle providers. Customers enter pickup and destination locations, receive distance-based pricing estimates, find suitable vehicles and create parcel delivery bookings.",
+      "notes": "QuickParcel is documented as two separate implementations: the version described in my resume uses Firebase Authentication and Firestore, while a separate Spring Boot + MySQL + Docker architecture was deployed on AWS EC2. They are not integrated with each other.",
+      "posterVariant": "map",
+      "accentColor": "#F5A524",
+      "githubUrl": null,
+      "demoUrl": null,
+      "position": 2,
+      "sections": [
+        {
+          "heading": "Overview",
+          "kind": "TEXT",
+          "body": "QuickParcel connects customers with vehicle providers. Customers can enter pickup and destination locations, receive distance-based pricing estimates, find suitable vehicles, and create parcel delivery bookings.",
+          "items": []
+        },
+        {
+          "heading": "Key Features",
+          "kind": "LIST",
+          "body": null,
+          "items": [
+            "User registration and authentication",
+            "Customer and provider dashboards",
+            "Parcel booking management",
+            "Vehicle allocation",
+            "Distance-based pricing",
+            "Route calculation using OSRM",
+            "Interactive maps using Leaflet",
+            "Location tracking",
+            "Booking status management",
+            "Synchronized dashboards"
+          ]
+        },
+        {
+          "heading": "Technical Implementation",
+          "kind": "TEXT",
+          "body": "Developed Spring Boot REST APIs to handle booking, vehicle allocation, authentication, pricing, and user management. Integrated Leaflet and OSRM for route visualisation and distance calculation.",
+          "items": []
+        },
+        {
+          "heading": "Implementation A: Resume Version",
+          "kind": "LIST",
+          "body": "The project version described in my resume uses Firebase services.",
+          "items": [
+            "Firebase Authentication",
+            "Firestore"
+          ]
+        },
+        {
+          "heading": "Implementation B: Containerised Deployment on AWS EC2",
+          "kind": "LIST",
+          "body": "A separate Spring Boot, MySQL and Docker-based architecture, deployed on AWS EC2 using Docker containers.",
+          "items": [
+            "Frontend container",
+            "Spring Boot backend container",
+            "MySQL database container with persistent storage",
+            "Caddy reverse proxy"
+          ]
+        },
+        {
+          "heading": "Deployment Architecture",
+          "kind": "FLOW",
+          "body": "OSRM is used as the external route calculation service.",
+          "items": [
+            "Browser",
+            "Caddy",
+            "Frontend",
+            "Spring Boot Backend",
+            "MySQL"
+          ]
+        }
+      ],
+      "metrics": []
+    },
+    "fake-review-detection": {
+      "slug": "fake-review-detection",
+      "title": "Fake Review Detection System",
+      "shortTitle": "Fake Review Detection",
+      "year": null,
+      "categories": [
+        "Natural Language Processing",
+        "Machine Learning",
+        "Deep Learning",
+        "Artificial Intelligence"
+      ],
+      "techStack": [
+        "Python",
+        "NLTK",
+        "TextBlob",
+        "Scikit-learn",
+        "TensorFlow",
+        "Keras",
+        "BiLSTM",
+        "Longformer",
+        "Hugging Face Transformers",
+        "TF-IDF",
+        "Pandas",
+        "NumPy",
+        "Matplotlib",
+        "Seaborn",
+        "MLflow",
+        "Streamlit",
+        "Docker",
+        "Joblib"
+      ],
+      "tagline": "Human or machine? An NLP system that separates genuine human-written reviews from AI-generated ones using classical ML, a BiLSTM and an ensemble.",
+      "summary": "An NLP-based fake review detection system that classifies online product and service reviews as either human-written genuine reviews or AI-generated reviews produced by language models such as ChatGPT and GPT-4.",
+      "notes": "All metrics are reported project results pending verification against the source code and evaluation files. The technologies listed span the project's experiments; not every model, dataset or library is part of a single production pipeline.",
+      "posterVariant": "text",
+      "accentColor": "#8B5CF6",
+      "githubUrl": null,
+      "demoUrl": null,
+      "position": 3,
+      "sections": [
+        {
+          "heading": "The Problem",
+          "kind": "TEXT",
+          "body": "AI-generated reviews are increasingly used to manipulate online ratings and influence customer purchasing decisions. Traditional fake review detection systems focus on spam, duplicate reviews and suspicious user behaviour, but AI-generated reviews can be grammatically correct and resemble genuine human-written reviews.",
+          "items": []
+        },
+        {
+          "heading": "The Approach",
+          "kind": "TEXT",
+          "body": "The system classifies reviews into two categories, human-written genuine reviews and AI-generated reviews, by analysing linguistic patterns, vocabulary, sentiment, textual characteristics and contextual information.",
+          "items": []
+        },
+        {
+          "heading": "NLP Preprocessing",
+          "kind": "LIST",
+          "body": "The project investigates and implements text preprocessing operations such as:",
+          "items": [
+            "Text cleaning and normalisation",
+            "Tokenisation",
+            "Stopword handling",
+            "Text standardisation",
+            "Linguistic feature extraction"
+          ]
+        },
+        {
+          "heading": "Feature Engineering",
+          "kind": "LIST",
+          "body": null,
+          "items": [
+            "TF-IDF",
+            "Unigrams and bigrams",
+            "Sentiment analysis",
+            "Linguistic features",
+            "Lexical diversity"
+          ]
+        },
+        {
+          "heading": "Machine Learning Models",
+          "kind": "LIST",
+          "body": null,
+          "items": [
+            "Logistic Regression",
+            "Random Forest",
+            "Support Vector Classifier"
+          ]
+        },
+        {
+          "heading": "Deep Learning: Bidirectional LSTM",
+          "kind": "TEXT",
+          "body": "Implemented a Bidirectional LSTM model for sequential text classification. The BiLSTM processes text in both forward and backward directions to capture contextual information.",
+          "items": []
+        },
+        {
+          "heading": "Ensemble Learning",
+          "kind": "TEXT",
+          "body": "The project combines Logistic Regression and BiLSTM predictions. The reported ensemble accuracy is achieved using a 0.5 decision threshold. An additional calibrated threshold of 0.22 reportedly produces 94.69% test accuracy while limiting false flags on genuine Amazon reviews to approximately 1%.",
+          "items": []
+        },
+        {
+          "heading": "Longformer Integration",
+          "kind": "TEXT",
+          "body": "The project also integrates a pretrained Longformer-based AI text detector, evaluated on additional AI-generated review sets (see Reported Results).",
+          "items": []
+        },
+        {
+          "heading": "Datasets Investigated",
+          "kind": "LIST",
+          "body": "The exact datasets used by each training and evaluation pipeline are still to be verified against the source code.",
+          "items": [
+            "Amazon Reviews Dataset",
+            "MAGE Dataset",
+            "GPT-4 IMDb Reviews"
+          ]
+        },
+        {
+          "heading": "Streamlit Application",
+          "kind": "LIST",
+          "body": null,
+          "items": [
+            "Individual review input",
+            "Review rating input",
+            "Real-time fake review detection",
+            "Human-written versus AI-generated classification",
+            "Prediction probability scores",
+            "Explainability and feature-based insights",
+            "CSV upload for batch processing",
+            "Batch prediction results",
+            "Downloading prediction results"
+          ]
+        },
+        {
+          "heading": "Model Evaluation",
+          "kind": "LIST",
+          "body": null,
+          "items": [
+            "Accuracy",
+            "Precision",
+            "Recall",
+            "F1-score",
+            "Confusion matrix",
+            "False positives",
+            "False negatives",
+            "Cross-dataset evaluation",
+            "Classification threshold calibration"
+          ]
+        },
+        {
+          "heading": "Project Architecture",
+          "kind": "FLOW",
+          "body": null,
+          "items": [
+            "Dataset Collection",
+            "Text Preprocessing",
+            "Feature Engineering",
+            "Model Training",
+            "Ensemble Prediction",
+            "AI-Generated or Human-Written Classification",
+            "Streamlit Interface"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "label": "Logistic Regression: test accuracy",
+          "value": "95.20%",
+          "note": null
+        },
+        {
+          "label": "BiLSTM: test accuracy",
+          "value": "95.47%",
+          "note": null
+        },
+        {
+          "label": "Ensemble: test accuracy",
+          "value": "96.57%",
+          "note": "At a 0.5 decision threshold"
+        },
+        {
+          "label": "Ensemble: calibrated threshold (0.22)",
+          "value": "94.69%",
+          "note": "Test accuracy; false flags on genuine Amazon reviews limited to approximately 1%"
+        },
+        {
+          "label": "ChatGPT-generated Yelp reviews",
+          "value": "78.79%",
+          "note": "Additional evaluation"
+        },
+        {
+          "label": "GPT-4-generated IMDb reviews",
+          "value": "96.5%",
+          "note": "Additional evaluation"
+        },
+        {
+          "label": "GPT-2-generated Amazon reviews",
+          "value": "94%",
+          "note": "Detection with the combined system"
+        }
+      ]
+    },
+    "currency-authentication": {
+      "slug": "currency-authentication",
+      "title": "Currency Authentication System",
+      "shortTitle": "Currency Authentication",
+      "year": 2025,
+      "categories": [
+        "Machine Learning",
+        "Image Processing",
+        "Computer Vision"
+      ],
+      "techStack": [
+        "Python",
+        "Image Processing",
+        "Random Forest",
+        "Support Vector Machine",
+        "Gradient Boosting",
+        "Tkinter"
+      ],
+      "tagline": "A machine learning counterfeit detector that analyses currency note images and classifies them through a real-time verification GUI.",
+      "summary": "A machine learning-based counterfeit currency detection system that uses image processing and classification techniques to analyse currency image characteristics and classify potentially genuine and counterfeit currency notes.",
+      "notes": null,
+      "posterVariant": "currency",
+      "accentColor": "#10B981",
+      "githubUrl": null,
+      "demoUrl": null,
+      "position": 4,
+      "sections": [
+        {
+          "heading": "Overview",
+          "kind": "TEXT",
+          "body": "Built a machine learning-based counterfeit currency detection system using image processing and classification techniques. The system analyses currency image characteristics and uses machine learning models to classify potentially genuine and counterfeit currency notes.",
+          "items": []
+        },
+        {
+          "heading": "Models Implemented",
+          "kind": "LIST",
+          "body": null,
+          "items": [
+            "Random Forest",
+            "Support Vector Machine",
+            "Gradient Boosting"
+          ]
+        },
+        {
+          "heading": "Real-time Verification GUI",
+          "kind": "TEXT",
+          "body": "Developed a real-time verification GUI using Tkinter.",
+          "items": []
+        }
+      ],
+      "metrics": []
+    }
+  }
+}

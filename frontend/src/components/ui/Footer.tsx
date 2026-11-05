@@ -35,7 +35,7 @@ export function Footer({ profile }: { profile: Profile }) {
             ))}
           </ul>
         )}
-        <p className="text-xs">Built with Next.js, Spring Boot and MySQL. Content is served from a REST API.</p>
+        <p className="text-xs">Built with Next.js, Spring Boot and MySQL.</p>
       </div>
     </footer>
   );

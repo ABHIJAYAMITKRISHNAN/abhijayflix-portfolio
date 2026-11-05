@@ -1,10 +1,8 @@
 import { Suspense } from "react";
-import { BackendUnavailableError, getPortfolio } from "@/lib/api";
-import type { Portfolio } from "@/lib/types";
+import { getPortfolio } from "@/lib/api";
 import { Navbar } from "@/components/ui/Navbar";
 import { Footer } from "@/components/ui/Footer";
 import { Row } from "@/components/ui/Row";
-import { BackendOffline } from "@/components/ui/BackendOffline";
 import { HomeSkeleton } from "@/components/ui/Skeletons";
 import { IntroSplash } from "@/components/home/IntroSplash";
 import { Hero } from "@/components/home/Hero";
@@ -26,13 +24,7 @@ export default function HomePage() {
 }
 
 async function Home() {
-  let data: Portfolio;
-  try {
-    data = await getPortfolio();
-  } catch (err) {
-    if (err instanceof BackendUnavailableError) return <BackendOffline detail={err.message} />;
-    throw err;
-  }
+  const data = await getPortfolio();
 
   const { profile } = data;
   const initials = profile.fullName.split(" ").map((n) => n[0]).join("");
