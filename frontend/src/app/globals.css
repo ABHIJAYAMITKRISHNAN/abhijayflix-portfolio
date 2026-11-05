@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@theme {
+  --color-flix-red: #e50914;
+  --color-flix-red-dark: #b20710;
+  --color-flix-black: #141414;
+  --color-flix-panel: #181818;
+  --color-flix-card: #232323;
+  --color-flix-muted: #a3a3a3;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-bebas), Impact, "Arial Narrow", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+  background: var(--color-flix-black);
+}
+
+body {
+  background: var(--color-flix-black);
+  color: #fff;
+}
+
+::selection {
+  background: var(--color-flix-red);
+  color: #fff;
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@utility text-outline {
+  -webkit-text-stroke: 3px #595959;
+  color: var(--color-flix-black);
+}
+
+@utility vignette-bottom {
+  background: linear-gradient(to top, var(--color-flix-black) 0%, rgb(20 20 20 / 0.6) 35%, transparent 70%);
+}
+
+@utility vignette-left {
+  background: linear-gradient(77deg, rgb(0 0 0 / 0.85) 0%, rgb(0 0 0 / 0.45) 45%, transparent 80%);
+}
+
+@keyframes drift {
+  from { transform: translate3d(0, 0, 0) scale(1.05); }
+  to   { transform: translate3d(-3%, -2%, 0) scale(1.12); }
+}
+
+.animate-drift {
+  animation: drift 24s ease-in-out infinite alternate;
+}
+
+@keyframes shimmer {
+  100% { transform: translateX(100%); }
+}
+
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background: #222;
+}
+.skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.06), transparent);
+  animation: shimmer 1.6s infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .animate-drift, .skeleton::after { animation: none; }
+}
